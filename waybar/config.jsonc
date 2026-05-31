@@ -6,7 +6,7 @@
   // "margin-left": 10,
   // "margin-right": 10,
 
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "custom/cpucat"],
   "modules-center": ["clock"],
   "modules-right": ["pulseaudio"],
 
@@ -14,8 +14,15 @@
     "format": "{name}",
     "on-click": "activate",
     "all-outputs": true,
-    "active-only": false
-  },
+    "active-only": false,
+    "persistent-workspaces": {
+        "*": [1, 2, 3, 4]
+    }
+},
+
+"custom/cpucat": {
+    "exec": "/home/vig/.config/waybar/scripts/catloop.sh"
+},
 
   "clock": {
     "format": "{:%a %d %b • %I:%M %p}",
