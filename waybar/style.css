@@ -8,13 +8,14 @@
 window#waybar {
   background: rgba(20, 20, 20, 0.85);
   color: #ffffff;
-  border-radius: 10px;
-  margin: 4px 6px;
 }
 
 /* WORKSPACES */
 #workspaces button {
-  padding: 0 5px;
+  all: initial;
+  padding: 0 8px;
+  margin: 0 1.5px;
+  min-width: 9px;
   background-color: transparent;
   color: #ffffff;
 }
@@ -23,8 +24,9 @@ window#waybar {
   background: rgba(0, 0, 0, 0.2);
 }
 
-#workspaces button.occupied {
-  color: #ffffff;
+
+#workspaces button.empty {
+  opacity: 0.5;
 }
 
 #workspaces button.focused,
@@ -36,10 +38,6 @@ window#waybar {
   background-color: #eb4d4b;
 }
 
-#pulseaudio {
-  padding-right: 20px;
-}
-
 #custom-cpucat {
   font-family: "Waycat", monospace;
   font-size: 16px;
@@ -47,4 +45,33 @@ window#waybar {
   color: white;
   padding-left: 5px;
   padding-right: 8px;
+}
+
+#pulseaudio-slider {
+  padding: 0px;
+  margin: 0px;
+  margin-left: 12px;
+}
+
+#pulseaudio-slider slider {
+  all: unset;
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 8px;
+  min-width: 64px;
+  border-radius: 5px;
+  background: rgba(63, 63, 70, 1);
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 5px;
+  background: rgba(117, 241, 250, 1);
 }
