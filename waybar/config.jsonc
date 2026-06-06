@@ -6,57 +6,56 @@
   "margin-top": 5,
   "margin-left": 10,
   "margin-right": 10,
-
-  "modules-left": ["hyprland/workspaces", "custom/cpucat"],
-  "modules-center": ["clock"],
-  "modules-right": ["custom/bluetooth","group/volume"],
-
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/cpucat"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/bluetooth",
+    "pulseaudio"
+  ],
   "hyprland/workspaces": {
     "format": "{name}",
     "on-click": "activate",
     "all-outputs": true,
     "active-only": false,
     "persistent-workspaces": {
-        "*": [1, 2, 3, 4]
+      "*": [
+        1,
+        2,
+        3,
+        4
+      ]
     }
-},
-
-"custom/cpucat": {
+  },
+  "custom/cpucat": {
     "exec": "/home/vig/.config/waybar/scripts/catloop.sh"
-},
-
+  },
   "clock": {
     "format": "{:%a %d %b • %I:%M %p}",
     "tooltip": false
   },
-
   "custom/bluetooth": {
     "exec": "~/.config/waybar/scripts/bluetooth.sh",
-    "interval": 5,
+    "interval": 1,
     "tooltip": false,
     "on-click": "kitty -e bluetui"
-},
-
+  },
   "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", ""]
-        },
-        "scroll-step": 1,
-        "ignored-sinks": ["Easy Effects Sink"],
-        "on-click": "pavucontrol"
-    },
-    "pulseaudio/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal"
-    },
-    "group/volume": {
-      "orientation": "horizontal",
-      "modules": [
-        "pulseaudio",
-        "pulseaudio/slider"
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾",
+        "󰕾",
+        "󰕾"
       ]
-    }
+    },
+    "on-click": "pavucontrol"
+  }
 }

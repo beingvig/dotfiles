@@ -47,35 +47,6 @@ window#waybar {
   padding-right: 8px;
 }
 
-#custom-bluetooth {
+#custom-bluetooth, #pulseaudio {
   padding-right: 12px;
-}
-
-#pulseaudio-slider {
-  padding: 0px;
-  margin: 0px;
-  margin-left: 12px;
-}
-
-#pulseaudio-slider slider {
-  all: unset;
-  min-height: 0;
-  min-width: 0;
-  opacity: 0;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-}
-
-#pulseaudio-slider trough {
-  min-height: 8px;
-  min-width: 64px;
-  border-radius: 5px;
-  background: rgba(63, 63, 70, 1);
-}
-
-#pulseaudio-slider highlight {
-  min-width: 10px;
-  border-radius: 5px;
-  background: rgba(117, 241, 250, 1);
 }
