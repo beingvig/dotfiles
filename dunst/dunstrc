@@ -15,3 +15,8 @@ background = "#514045"
 foreground = "#D3C6AA"
 frame_color = "#E67E80"
 highlight = "#E67E80"
+
+[global]
+mouse_left_click = do_action, close_current
+
+

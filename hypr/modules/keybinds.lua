@@ -30,7 +30,7 @@ hl.bind("ALT + TAB", function()
 	hl.dispatch(hl.dsp.window.cycle_next())
 	hl.dispatch(hl.dsp.window.bring_to_top())
 end)
-hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd('[float; center; size 1000 700] grim -g "$(slurp)" - | satty -f -'))
+hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd('~/.config/hypr/scripts/screenshot.sh'))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
