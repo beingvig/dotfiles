@@ -1,0 +1,17 @@
+[urgency_low]
+background = "#2D353B"
+foreground = "#D3C6AA"
+frame_color = "#7A8478"
+highlight = "#7FBBB3"
+
+[urgency_normal]
+background = "#2D353B"
+foreground = "#D3C6AA"
+frame_color ="#DBBC7F" 
+highlight = "#DBBC7F"
+
+[urgency_critical]
+background = "#514045"
+foreground = "#D3C6AA"
+frame_color = "#E67E80"
+highlight = "#E67E80"
