@@ -104,7 +104,7 @@ hl.animation({
     enabled = true,
     speed = 5,
     bezier = "ease",
-    style = "slide bottom",
+    style = "slide",
 })
 
 hl.animation({
