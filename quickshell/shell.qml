@@ -217,8 +217,6 @@ PanelWindow {
         property real volume: Pipewire.defaultAudioSink ? Pipewire.defaultAudioSink.audio.volume : 0
         property bool muted: Pipewire.defaultAudioSink ? Pipewire.defaultAudioSink.audio.muted : false
         readonly property int volumePercent: Math.round(volume * 100)
-        readonly property var volIcons: ["▁", "▂", "▄", "▆", "█"]
-        readonly property string volIcon: volIcons[Math.min(4, Math.floor(volumePercent / 20))]
 
         PwObjectTracker {
             objects: [Pipewire.defaultAudioSink]
@@ -231,7 +229,16 @@ PanelWindow {
             Row {
                 id: contentRow
                 anchors.centerIn: parent
-                spacing: 6
+                spacing: 4
+
+                Text {
+                    anchors.verticalCenter: parent.verticalCenter
+                    text: muted ? "" : "VOL" 
+                    font.family: barFont.family
+                    font.pixelSize: 9
+                    font.letterSpacing: 1
+                    color: barFgActive
+                }
 
                 Text {
                     anchors.verticalCenter: parent.verticalCenter
@@ -240,12 +247,6 @@ PanelWindow {
                     color: barFgActive
                 }
 
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    text: muted ? "✕" : volIcon
-                    font: iconFont
-                    color: barFgActive
-                }
             }
         }
 
