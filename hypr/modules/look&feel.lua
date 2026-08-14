@@ -124,7 +124,7 @@ hl.animation({
 hl.animation({
     leaf = "workspaces",
     enabled = true,
-    speed = 4,
+    speed = 6,
     bezier = "overshot",
     style = "slide",
 })
