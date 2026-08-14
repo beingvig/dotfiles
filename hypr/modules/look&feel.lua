@@ -71,30 +71,30 @@ hl.curve("overshot", {
 hl.animation({
     leaf = "global",
     enabled = true,
-    speed = 5,
+    speed = 4,
     bezier = "ease",
 })
 
 hl.animation({
     leaf = "windows",
     enabled = true,
-    speed = 5,
+    speed = 4,
     bezier = "overshot",
-    style = "gnomed",
+    style = "slide",
 })
 
 hl.animation({
     leaf = "windowsOut",
     enabled = true,
-    speed = 5,
+    speed = 8,
     bezier = "ease",
-    style = "slide bottom",
+    style = "slide",
 })
 
 hl.animation({
     leaf = "windowsMove",
     enabled = true,
-    speed = 5,
+    speed = 4,
     bezier = "overshot",
     style = "slide",
 })
@@ -102,7 +102,7 @@ hl.animation({
 hl.animation({
     leaf = "layers",
     enabled = true,
-    speed = 5,
+    speed = 4,
     bezier = "ease",
     style = "slide",
 })
@@ -124,9 +124,18 @@ hl.animation({
 hl.animation({
     leaf = "workspaces",
     enabled = true,
-    speed = 5,
+    speed = 4,
     bezier = "overshot",
     style = "slide",
+})
+
+-- this is for the screenshot selection thing
+hl.layer_rule({
+    name = "selection-layer-no-anim",
+    match = {
+        namespace = "selection",
+    },
+    no_anim = true,
 })
 
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
