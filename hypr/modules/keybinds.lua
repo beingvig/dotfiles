@@ -5,6 +5,7 @@
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("kitty -e sudo lazydocker"))
 hl.bind(mainMod .. " + return", hl.dsp.exec_cmd("[float;center;size 500 500] kitty"))
 hl.bind(mainMod .. " + SHIFT + return", hl.dsp.exec_cmd("kitty"))
 local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
