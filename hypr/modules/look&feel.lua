@@ -124,7 +124,7 @@ hl.animation({
 hl.animation({
     leaf = "workspaces",
     enabled = true,
-    speed = 6,
+    speed = 4,
     bezier = "overshot",
     style = "slide",
 })
@@ -166,7 +166,7 @@ hl.config({
 -- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
 hl.config({
 	master = {
-		new_status = "master",
+		new_status = "slave",
 	},
 })
 
@@ -174,5 +174,7 @@ hl.config({
 hl.config({
 	scrolling = {
 		fullscreen_on_one_column = true,
+        column_width = 0.9,
+        direction = "right"
 	},
 })
