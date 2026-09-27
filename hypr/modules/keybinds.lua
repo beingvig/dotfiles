@@ -2,25 +2,51 @@
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod = "SUPER"
+local terminal = "kitty"
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("kitty -e sudo lazydocker"))
-hl.bind(mainMod .. " + return", hl.dsp.exec_cmd("[float;center;size 500 500] kitty"))
-hl.bind(mainMod .. " + SHIFT + return", hl.dsp.exec_cmd("kitty"))
 local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 
-hl.bind(mainMod .. " + escape", hl.dsp.exec_cmd("~/.config/rofi/scripts/powermenu.sh"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("kitty -e yazi", { float = true, center = true, size = { 900, 500 } }))
+hl.bind(mainMod .. " + return", hl.dsp.exec_cmd("[float;center;size 500 500] " .. terminal))
+hl.bind(mainMod .. " + SHIFT + return", hl.dsp.exec_cmd(terminal))
+
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd(terminal .. " -e sudo lazydocker"))
+
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(terminal .. " -e yazi", {
+    float = true,
+    center = true,
+    size = { 900, 500 }
+}))
+
 hl.bind(
-	mainMod .. " + C",
-	hl.dsp.exec_cmd("kitty -e yazi ~/.config/", { float = true, center = true, size = { 900, 500 } })
+    mainMod .. " + C",
+    hl.dsp.exec_cmd(terminal .. " -e yazi ~/.config/", {
+        float = true,
+        center = true,
+        size = { 900, 500 }
+    })
 )
+
 hl.bind(
-	mainMod .. " + P",
-	hl.dsp.exec_cmd("kitty -e yazi Projects/", { float = true, center = true, size = { 900, 500 } })
+    mainMod .. " + P",
+    hl.dsp.exec_cmd(terminal .. " -e yazi Projects/", {
+        float = true,
+        center = true,
+        size = { 900, 500 }
+    })
 )
+hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
+hl.bind(mainMod .. " + V", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+
+hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
+hl.bind("ALT + TAB", function()
+	hl.dispatch(hl.dsp.window.cycle_next())
+	hl.dispatch(hl.dsp.window.bring_to_top())
+end)
+hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd('~/.config/hypr/scripts/screenshot.sh'))
 hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
 hl.bind(mainMod .. " + V", hl.dsp.window.pseudo())
