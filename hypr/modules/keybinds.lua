@@ -47,17 +47,6 @@ hl.bind("ALT + TAB", function()
 	hl.dispatch(hl.dsp.window.bring_to_top())
 end)
 hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd('~/.config/hypr/scripts/screenshot.sh'))
-hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind(mainMod .. " + V", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
-
-hl.bind("ALT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu | cliphist decode | wl-copy"))
-hl.bind("ALT + TAB", function()
-	hl.dispatch(hl.dsp.window.cycle_next())
-	hl.dispatch(hl.dsp.window.bring_to_top())
-end)
-hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd('~/.config/hypr/scripts/screenshot.sh'))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
@@ -82,7 +71,6 @@ end
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-hl.bind(mainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "previous" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
