@@ -1,5 +1,6 @@
 vim.pack.add({
     { src = 'https://github.com/nvim-mini/mini.notify', version = 'stable' },
+    { src = 'https://github.com/nvim-mini/mini.pairs', version = 'stable' },
     { src = 'https://github.com/nvim-mini/mini.nvim', version = 'stable' },
 })
 
@@ -22,3 +23,6 @@ vim.keymap.set("n", "<leader>-", function()
 end, { desc = "Toggle into currently opened file" })
 
 require('mini.notify').setup()
+
+-- Auto closing brackets
+require('mini.pairs').setup()

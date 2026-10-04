@@ -82,11 +82,46 @@ vim.lsp.enable("lua_ls")
 
 vim.lsp.config("ts_ls", {
 	capabilities = capabilities,
+
 	filetypes = {
-		"typescript",
-		"typescriptreact",
 		"javascript",
 		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+	},
+
+	settings = {
+		typescript = {
+			suggest = {
+				autoImports = true,
+				completeFunctionCalls = true,
+			},
+
+			inlayHints = {
+				includeInlayParameterNameHints = "all",
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayVariableTypeHints = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayEnumMemberValueHints = true,
+			},
+
+			updateImportsOnFileMove = {
+				enabled = "always",
+			},
+		},
+
+		javascript = {
+			suggest = {
+				autoImports = true,
+				completeFunctionCalls = true,
+			},
+
+			updateImportsOnFileMove = {
+				enabled = "always",
+			},
+		},
 	},
 })
 vim.lsp.enable("ts_ls")
